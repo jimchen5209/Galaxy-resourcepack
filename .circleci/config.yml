@@ -17,3 +17,12 @@ jobs:
       - store_artifacts:
           path: packed/
           destination: .
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
+        filters:
+          tags:
+            only: /.*/
+                    
